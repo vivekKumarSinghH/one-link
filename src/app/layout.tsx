@@ -4,6 +4,7 @@ import { siteConfig } from '@/app/page';
 import { Providers } from '@/components/providers';
 import { Analytics } from '@vercel/analytics/react';
 import { Inter } from 'next/font/google';
+import { ThemeProvider } from '@/components/theme-provider';
 
 export const inter = Inter({
   subsets: ['latin'],
@@ -86,7 +87,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Providers>{children}</Providers>
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

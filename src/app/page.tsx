@@ -9,6 +9,7 @@ import PublishButton from '@/components/buttons/publish-button';
 import ShortenerButton from '@/components/buttons/shortener-button';
 import BackgroundShell from '@/components/backgrounds/background-shell';
 import GithubButton from '@/components/buttons/github-button';
+import { ModeToggle } from '@/components/mode-toggle';
 
 export const siteConfig = {
   name: 'LinkNode - one page, many links.',
@@ -21,6 +22,7 @@ export const siteConfig = {
 export default function Home() {
   return (
     <main className="relative grid h-screen px-2 md:container lg:grid-cols-3 lg:px-0">
+      <ModeToggle />
       <section className="flex h-screen flex-col items-center justify-center gap-6 py-6 lg:col-span-2 lg:px-20">
         <div className="hide_scrollbar flex w-full flex-col gap-5 overflow-y-auto pb-[10vh] lg:pb-0">
           <ProfileForm />
@@ -31,7 +33,7 @@ export default function Home() {
           <div className="grid w-full grid-cols-2 items-center justify-center gap-2 md:grid-cols-4 ">
             <DemoButton />
             <PublishButton />
-            <ShortenerButton />
+            {/* <ShortenerButton /> */}
             <GithubButton />
           </div>
         </div>
